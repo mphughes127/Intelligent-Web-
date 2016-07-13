@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Password123</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="icon" type="image/ico" href="images/favicon.ico">
+  <link rel="stylesheet" href="stylesheet.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcmC28a4Vs_vfj6w2sfeCcNfsqe9jS0-c">
+  </script>
+  <script src="formy.js"></script>
+
+
+</head>
+<body>
+
+  <div xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:dbp="http://dbpedia.org/property/" xmlns:dbo="http://dbpedia.org/ontology/" xmlns:dbr="http://dbpedia.org/resource/">
+    <header class="header">
+      <h1>IntelliWeb</h1>
+    </header>
+
+    <div class="container-fluid">
+
+      <ul class="nav nav-tabs nav-justified">
+        <li class="active"><a data-toggle="tab" href="#twitter">Search Twitter</a></li>
+        <li><a data-toggle="tab" href="#web">Search Web of Data</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div id="twitter" class="tab-pane fade in active">
+          <div class="container-fluid">
+            <div class="row content">
+              <div class="col-sm-4 sidenav">
+                <form name="input">
+                  <!--Must be laid out like this else it puts surplus child nodes in-->
+                  <div id="handles"><div class="form-field inline-block">
+                    Twitter handle<br>
+                    <input type="text" max=40 name="from0" id="team-handle0"><br>
+                    <input type="hidden" id="team-author-hidden0" name="team-author-hidden0" value="off">
+                    Author:<input type="checkbox" name="team-author0" id="team-author0" checked>
+                    <input type="hidden" id="team-mention-hidden0" name="team-mention-hidden0" value="off">
+                    Mentions:<input type="checkbox" name="team-mention0" id="team-mention0" checked>
+                    <input type="hidden" id="team-reply-hidden0" name="team-reply-hidden0" value="off">
+                    Replies:<input type="checkbox" name="team-reply0" id="team-reply0" checked>
+                  </div></div>
+                  <button type="button" id="add-button">Add more people</button><br>
+                  <div>
+                    <div class="form-field inline-block">
+                      Use a specific hashtag<br>
+                      <input type="text" name="hashtag">
+                    </div>
+                    <div class="form-field inline-block">
+                      Use a specific keyword<br>
+                      <input type="text" name="keyword">
+                    </div>
+                  </div>
+                  <div class="form-field" id="location-input">
+                    From a specific location<br>
+                    <input type="text" name="latitude" placeholder="Latitude (&deg)" id="lat" class="inline-block">
+                    <input type="text" name="longitude" placeholder="Longitude (&deg)" id="lng"class="inline-block">
+                    <input type="text" name="radius" placeholder="Radius (Miles)" id="rad"class="inline-block">
+                    <div id="searchMap"></div>
+                  </div>
+                  <div class="form-field">
+                    In a specific date range<br>
+                    <div class="align">From:<input type="date" name='since' id='since'><br>
+                      To:<input type="date" name='until' id='until'></div>
+                    </div>
+                    <div class="form-field">
+                      Search twitter
+                      <input type="checkbox" name="search" id="search">
+                    </div>
+                    <button type="button" id="send-button">Get tweets</button>
+                    <p id="errors" class="warning"></p>
+                  </form>
+                </div>
+
+                <div class="col-sm-8" id="right-panel">
+                  <div class="container-fluid" id="res">
+                    <div id="notifications"></div>
+                    <div class="col-sm-8" id="results" class="no-padding"></div>
+                    <div class="col-sm-4" id="stats"></div>
+                  </div>
+                  <div id="resultsMap"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+          <div id="web" class="tab-pane fade">
+
+
+            <div class="container-fluid">
+              <div class="row content">
+                <div class="col-sm-2 sidenav">
+                  <form name="input2">
+                    <div class="form-field">
+                      Team 1<br>
+                      <input type="text" name="team1" id="team1" class="ignore">
+                    </div>
+                    <div class="form-field">
+                      Team2<br>
+                      <input type="text" name="team2" id="team2" class="ignore">
+                    </div>
+                    <button type="button" id="search-button">Get Data</button>
+                    <p id="errors-1" class="warning"></p>
+                  </form>
+                </div>
+
+                <div class="col-sm-10" id="right-panel-1">
+                  <div class="container-fluid" id="res-1">
+                    <div id="notifications-1"></div>
+                    <div class="col-sm-6" id="results-team-1"></div>
+                    <div class="col-sm-6" id="results-team-2"></div>
+                  </div>
+                </div>
+              </div>
+              </div
+
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </body>
+    </html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Twitter Bot</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link rel="icon" type="image/ico" href="images/favicon.ico">
+  <link rel="stylesheet" href="stylesheet.css">
+  <script src="webForm.js"></script>
+</head>
+<body>
+
+  <div xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:dbp="http://dbpedia.org/property/" xmlns:dbo="http://dbpedia.org/ontology/" xmlns:dbr="http://dbpedia.org/resource/">
+
+  <header class="header">
+    <h1>Search the web of data</h1>
+    <p><a class="white" href="queryInterface.html">Click here to Search Twitter</a></p>
+  </header>
+
+  <div class="container-fluid">
+    <div class="row content">
+      <div class="col-sm-4 sidenav">
+        <form name="input">
+          <div class="form-field">
+            Team 1<br>
+            <input type="text" name="team1" id="team1" value="Manchester_United_F.C.">
+          </div>
+          <div class="form-field">
+            Team2<br>
+            <input type="text" name="team2" id="team2" value="Manchester_City_F.C.">
+          </div>
+          <div class="form-field">
+            Date<br>
+            <input type="date" name='date' id='date' value="2016-05-13">
+          </div>
+          <button type="button" id="search-button">Get Data</button>
+          <p id="errors"></p>
+        </form>
+      </div>
+
+      <div class="col-sm-8" id="right-panel">
+        <div class="container-fluid" id="res">
+          <div id="notifications"></div>
+          <div class="col-sm-6" id="results-team-1"></div>
+          <div class="col-sm-6" id="results-team-2"></div>
+        </div>
+      </div>
+    </div>
+  </div
+
+</div>
+
+  </body>
+  </html>
